@@ -32,6 +32,9 @@
 		98B109E028190D5B00A58FC8 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B109DF28190D5B00A58FC8 /* ViewControllerFactory.swift */; };
 		98B109E228190D9F00A58FC8 /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B109E128190D9F00A58FC8 /* iOSViewControllerFactoryTest.swift */; };
 		98B109E428190E0500A58FC8 /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B109E328190E0500A58FC8 /* iOSViewControllerFactory.swift */; };
+		98B109E628195A8F00A58FC8 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B109E528195A8F00A58FC8 /* ResultsPresenterTest.swift */; };
+		98B109E828195B0800A58FC8 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B109E728195B0800A58FC8 /* ResultsPresenter.swift */; };
+		98B109EA28195C4200A58FC8 /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B109E928195C4200A58FC8 /* ResultHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		98B109DF28190D5B00A58FC8 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		98B109E128190D9F00A58FC8 /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		98B109E328190E0500A58FC8 /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
+		98B109E528195A8F00A58FC8 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
+		98B109E728195B0800A58FC8 /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
+		98B109E928195C4200A58FC8 /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 				98B1096728118E2A00A58FC8 /* Info.plist */,
 				98B109DD2817FDDA00A58FC8 /* Question.swift */,
 				98B109E328190E0500A58FC8 /* iOSViewControllerFactory.swift */,
+				98B109E728195B0800A58FC8 /* ResultsPresenter.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 				98B109D52817CE8000A58FC8 /* NavigationControllerRouterTest.swift */,
 				98B109D92817FA7200A58FC8 /* QuestionTest.swift */,
 				98B109E128190D9F00A58FC8 /* iOSViewControllerFactoryTest.swift */,
+				98B109E528195A8F00A58FC8 /* ResultsPresenterTest.swift */,
+				98B109E928195C4200A58FC8 /* ResultHelper.swift */,
 			);
 			path = QuizAppTests;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 			files = (
 				98B1095A28118E2500A58FC8 /* AppDelegate.swift in Sources */,
 				98B1099E28166AC000A58FC8 /* UITableViewExtenstions.swift in Sources */,
+				98B109E828195B0800A58FC8 /* ResultsPresenter.swift in Sources */,
 				98B109A228166B0600A58FC8 /* CorrectAnswerCell.swift in Sources */,
 				98B1095C28118E2500A58FC8 /* SceneDelegate.swift in Sources */,
 				98B109A028166AED00A58FC8 /* PresentableAnswer.swift in Sources */,
@@ -286,8 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B109DA2817FA7200A58FC8 /* QuestionTest.swift in Sources */,
+				98B109E628195A8F00A58FC8 /* ResultsPresenterTest.swift in Sources */,
 				98B109D62817CE8000A58FC8 /* NavigationControllerRouterTest.swift in Sources */,
 				98B1098C281191D700A58FC8 /* QuestionViewControllerTest.swift in Sources */,
+				98B109EA28195C4200A58FC8 /* ResultHelper.swift in Sources */,
 				98B109982814054100A58FC8 /* TableViewHelpers.swift in Sources */,
 				98B109922813D08600A58FC8 /* ResultViewControllerTest.swift in Sources */,
 				98B109E228190D9F00A58FC8 /* iOSViewControllerFactoryTest.swift in Sources */,
