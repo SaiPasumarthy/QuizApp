@@ -32,6 +32,26 @@ class iOSViewControllerFactoryTest: XCTestCase {
         XCTAssertFalse(makeQuestionController().allowsMultipleSelection)
     }
     
+    func test_questionViewController_singleAnswer_rightCallbackWasFired() {
+        var callbackFired = false
+        let sut = makeQuestionController(answerCallback: { _ in
+            callbackFired = true
+        })
+        _ = sut.view
+        sut.tableview.select(row: 0)
+        XCTAssertTrue(callbackFired)
+    }
+    
+    func test_questionViewController_multipleAnswer_rightCallbackWasFired() {
+        var callbackFired = false
+        let sut = makeQuestionController(question:Question.multipleAnswer(""), answerCallback: { _ in
+            callbackFired = true
+        })
+        _ = sut.view
+        sut.tableview.select(row: 0)
+        XCTAssertTrue(callbackFired)
+    }
+    
     func test_questionViewController_multipleAnswer_createsControllerWithTitle() {
         let presenter = QuestionPresenter(questions: [singleAnswerQuestion, multipleAnswerQuestion], question: multipleAnswerQuestion)
         XCTAssertEqual(makeQuestionController(question: multipleAnswerQuestion).title, presenter.title)
@@ -67,10 +87,10 @@ class iOSViewControllerFactoryTest: XCTestCase {
         return iOSViewControllerFactory(questions:[singleAnswerQuestion, multipleAnswerQuestion], options: options, correctAnswers: correctAnswers)
     }
     
-    func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
+    func makeQuestionController(question: Question<String> = Question.singleAnswer(""), answerCallback: @escaping ([String]) -> Void = {_ in}) -> QuestionViewController {
         let sut = makeSUT(options: [question: options])
 
-        return sut.questionViewController(question: question, answerCallback: {_ in}) as! QuestionViewController
+        return sut.questionViewController(question: question, answerCallback: answerCallback) as! QuestionViewController
     }
     
     func makeResults() -> (controller: ResultViewController, presenter: ResultsPresenter) {
