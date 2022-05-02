@@ -29,7 +29,9 @@ class iOSViewControllerFactory: ViewControllerFactory {
     
     func resultViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
         let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
-        return ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
+        let controller = ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
+        controller.title = presenter.title
+        return controller
     }
     
     private func questionViewController(question: Question<String>, options: [String], answerCallback: @escaping ([String]) -> Void) -> QuestionViewController {
