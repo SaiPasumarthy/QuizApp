@@ -106,8 +106,8 @@ class NavigationControllerRouterTest: XCTestCase {
         let viewController = UIViewController()
         let secondViewController = UIViewController()
 
-        let result = Result(answers: [singleAnswerQuestion: ["A1"]], score: 1)
-        let secondResult = Result(answers: [Question.singleAnswer("Q2"): ["A2"]], score: 2)
+        let result = Result.make(answers: [singleAnswerQuestion: ["A1"]], score: 1)
+        let secondResult = Result.make(answers: [Question.singleAnswer("Q2"): ["A2"]], score: 2)
 
         factory.stub(result: result, viewController: viewController)
         factory.stub(result: secondResult, viewController: secondViewController)
