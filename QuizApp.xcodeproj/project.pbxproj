@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9887D9382822798200CF7E9F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9887D9372822798200CF7E9F /* .travis.yml */; };
+		9887D94D2825419E00CF7E9F /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D94C2825419E00CF7E9F /* ScoreTest.swift */; };
+		9887D950282541D600CF7E9F /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D94F282541D600CF7E9F /* BasicScore.swift */; };
 		98B1095A28118E2500A58FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1095928118E2500A58FC8 /* AppDelegate.swift */; };
 		98B1095C28118E2500A58FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1095B28118E2500A58FC8 /* SceneDelegate.swift */; };
 		98B1096328118E2A00A58FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1096228118E2A00A58FC8 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		9887D9372822798200CF7E9F /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
+		9887D94C2825419E00CF7E9F /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
+		9887D94F282541D600CF7E9F /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 		98B1095628118E2500A58FC8 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1095928118E2500A58FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B1095B28118E2500A58FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9887D94B2825418D00CF7E9F /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				9887D94C2825419E00CF7E9F /* ScoreTest.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
+		9887D94E282541BA00CF7E9F /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				9887D94F282541D600CF7E9F /* BasicScore.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
 		98B1094D28118E2500A58FC8 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +146,7 @@
 		98B1095828118E2500A58FC8 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				9887D94E282541BA00CF7E9F /* Scoring */,
 				98B10A07281FE5CB00A58FC8 /* Router */,
 				98B10A04281FE58800A58FC8 /* Presenter */,
 				98B109FE281FE4FE00A58FC8 /* UI */,
@@ -137,6 +158,7 @@
 		98B1096F28118E2A00A58FC8 /* QuizAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				9887D94B2825418D00CF7E9F /* Scoring */,
 				98B10A0E281FE63600A58FC8 /* Presenter */,
 				98B10A0D281FE62900A58FC8 /* Router */,
 				98B10A09281FE5F900A58FC8 /* UI */,
@@ -448,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B1095A28118E2500A58FC8 /* AppDelegate.swift in Sources */,
+				9887D950282541D600CF7E9F /* BasicScore.swift in Sources */,
 				98B1099E28166AC000A58FC8 /* UITableViewExtenstions.swift in Sources */,
 				98B109E828195B0800A58FC8 /* ResultsPresenter.swift in Sources */,
 				98B109A228166B0600A58FC8 /* CorrectAnswerCell.swift in Sources */,
@@ -470,6 +493,7 @@
 				98B109E628195A8F00A58FC8 /* ResultsPresenterTest.swift in Sources */,
 				98B109D62817CE8000A58FC8 /* NavigationControllerRouterTest.swift in Sources */,
 				98B1098C281191D700A58FC8 /* QuestionViewControllerTest.swift in Sources */,
+				9887D94D2825419E00CF7E9F /* ScoreTest.swift in Sources */,
 				98B109EE281A652700A58FC8 /* QuestionPresenterTest.swift in Sources */,
 				98B109EA28195C4200A58FC8 /* ResultHelper.swift in Sources */,
 				98B109982814054100A58FC8 /* TableViewHelpers.swift in Sources */,
