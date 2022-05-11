@@ -8,29 +8,43 @@
 import Foundation
 import QuizEngine
 
-struct ResultsPresenter {
+final class ResultsPresenter {
     
-    let result: Result<Question<String>, [String]>
-    let questions:[Question<String>]
-    let correctAnswers: [Question<String>: [String]]
+    typealias Answers = [(question: Question<String>, answers: [String])]
+    typealias Scorer = ([[String]], [[String]]) -> Int
+    
+    private let userAnswers: Answers
+    private let correctAnswers: Answers
+    private let scorer: Scorer
+    
+    init(result: Result<Question<String>, [String]>, questions:[Question<String>], correctAnswers: [Question<String>: [String]]) {
+        self.userAnswers = questions.map { question in
+            return (question, result.answers[question]!)
+        }
+        self.correctAnswers = questions.map { question in
+            return (question, correctAnswers[question]!)
+        }
+        self.scorer = {_, _ in return result.score}
+    }
     
     var title: String {
         return "Result"
     }
     
     var summary: String {
-        return "You got \(result.score)/\(result.answers.count) correct"
+        return "You got \(score)/\(self.userAnswers.count) correct"
+    }
+    
+    private var score: Int {
+        return self.scorer(self.userAnswers.map { $0.answers }, self.correctAnswers.map { $0.answers })
     }
     
     var presentableAnswers: [PresentableAnswer] {
-        return questions.map { question in
-            guard let userAnswer = result.answers[question], let correctAnswer = correctAnswers[question] else {
-                fatalError("Couldn't find correct answer for question \(question)")
-            }
-            
-            return presentableAnswer(question, userAnswer, correctAnswer)
+        return zip(self.userAnswers, self.correctAnswers).map { userAnswer, correctAnswer in
+            return presentableAnswer(userAnswer.question, userAnswer.answers, correctAnswer.answers)
         }
     }
+
     
     private func presentableAnswer(_  question: Question<String>, _ userAnswer: [String], _ correctAnswer: [String])-> PresentableAnswer {
         switch question {
