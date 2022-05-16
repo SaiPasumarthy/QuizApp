@@ -11,23 +11,16 @@ import QuizEngine
 class iOSViewControllerFactory: ViewControllerFactory {
     typealias Answers = [(question:Question<String>, answers: [String])]
     
-    private let questions: [Question<String>]
-    private let options: Dictionary<Question<String>, [String]>
-    private let correctAnswers: () -> Answers
-
-    init(options: Dictionary<Question<String>, [String]>, correctAnswers: Answers) {
-        self.questions = correctAnswers.map { $0.question }
-        self.options = options
-        self.correctAnswers = { correctAnswers }
+    private var questions: [Question<String>] {
+        return correctAnswers.map { $0.question }
     }
     
-    init(questions: [Question<String>],options: Dictionary<Question<String>, [String]>, correctAnswers: [Question<String>: [String]]) {
-        self.questions = questions
+    private let options: Dictionary<Question<String>, [String]>
+    private let correctAnswers: Answers
+
+    init(options: Dictionary<Question<String>, [String]>, correctAnswers: Answers) {
         self.options = options
-        self.correctAnswers = { questions.map { question in
-            return (question, correctAnswers[question]!)
-        }
-        }
+        self.correctAnswers = correctAnswers
     }
     
     func questionViewController(question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -39,7 +32,7 @@ class iOSViewControllerFactory: ViewControllerFactory {
     }
     
     func resultViewController(for userAnswers: Answers) -> UIViewController {
-        let presenter = ResultsPresenter(userAnswers: userAnswers, correctAnswers: correctAnswers(), scorer: BasicScore.score)
+        let presenter = ResultsPresenter(userAnswers: userAnswers, correctAnswers: correctAnswers, scorer: BasicScore.score)
         
         let controller = ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
         controller.title = presenter.title
@@ -50,7 +43,7 @@ class iOSViewControllerFactory: ViewControllerFactory {
         
         let presenter = ResultsPresenter(userAnswers: questions.map { question in
             return (question, result.answers[question]!)
-        }, correctAnswers: correctAnswers(), scorer: {_, _ in return result.score})
+        }, correctAnswers: correctAnswers, scorer: {_, _ in return result.score})
         
         let controller = ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
         controller.title = presenter.title

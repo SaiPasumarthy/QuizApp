@@ -89,16 +89,12 @@ class iOSViewControllerFactoryTest: XCTestCase {
     
     // MARK: Helpers
     
-    func makeSUT(options: Dictionary<Question<String>, [String]> = [:], correctAnswers: [Question<String>: [String]] = [:]) -> iOSViewControllerFactory {
-        return iOSViewControllerFactory(questions:[singleAnswerQuestion, multipleAnswerQuestion], options: options, correctAnswers: correctAnswers)
-    }
-    
     func makeSUT(options: Dictionary<Question<String>, [String]> = [:], correctAnswers: [(Question<String>, [String])] = []) -> iOSViewControllerFactory {
         return iOSViewControllerFactory(options: options, correctAnswers: correctAnswers)
     }
     
     func makeQuestionController(question: Question<String> = Question.singleAnswer(""), answerCallback: @escaping ([String]) -> Void = {_ in}) -> QuestionViewController {
-        let sut = makeSUT(options: [question: options], correctAnswers: [:])
+        let sut = makeSUT(options: [question: options], correctAnswers: [(singleAnswerQuestion, []), (multipleAnswerQuestion, [])])
 
         return sut.questionViewController(question: question, answerCallback: answerCallback) as! QuestionViewController
     }
