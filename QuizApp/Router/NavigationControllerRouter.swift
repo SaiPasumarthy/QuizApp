@@ -8,34 +8,34 @@
 import UIKit
 import QuizEngine
 
-class NavigationControllerRouter: Router {
+final class NavigationControllerRouter: QuizDelegate {
     
     private let naviagationController: UINavigationController
     private let factory: ViewControllerFactory
     
-    init(_ naviagationController: UINavigationController, factory: ViewControllerFactory) {
-        self.naviagationController = naviagationController
+    init(_ navigationController: UINavigationController, factory: ViewControllerFactory) {
+        self.naviagationController = navigationController
         self.factory = factory
     }
     
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
+    func answer(for question: Question<String>, completion: @escaping ([String]) -> Void) {
         switch question {
         case .singleAnswer:
-            show(factory.questionViewController(question: question, answerCallback: answerCallback))
+            show(factory.questionViewController(question: question, answerCallback: completion))
         case .multipleAnswer:
             let barButton = UIBarButtonItem(title: "Submit", style: .done, target: nil, action: nil)
-            let buttonController = SubmitButtonController(button: barButton, callback: answerCallback)
+            let buttonController = SubmitButtonController(button: barButton, callback: completion)
             let controller = factory.questionViewController(question: question, answerCallback: { selection in
                 buttonController.update(model: selection)
             })
-            
+
             controller.navigationItem.rightBarButtonItem = barButton
             show(controller)
         }
     }
     
-    func routeTo(result:Result<Question<String>, [String]>) {
-        show(factory.resultViewController(for: result))
+    func didCompleteQuiz(withAnswers answers: [(question: Question<String>, answer: [String])]) {
+        show(factory.resultViewController(for: answers))
     }
     
     private func show(_ viewController: UIViewController) {
