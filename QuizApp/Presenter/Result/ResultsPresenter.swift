@@ -40,7 +40,6 @@ final class ResultsPresenter {
             return presentableAnswer(userAnswer.question, userAnswer.answers, correctAnswer.answers)
         }
     }
-
     
     private func presentableAnswer(_  question: Question<String>, _ userAnswer: [String], _ correctAnswer: [String])-> PresentableAnswer {
         switch question {
