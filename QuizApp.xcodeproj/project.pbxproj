@@ -121,6 +121,23 @@
 			path = Scoring;
 			sourceTree = "<group>";
 		};
+		9887D98D2833CC2900CF7E9F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				98B109FF281FE51600A58FC8 /* Question */,
+				98B10A00281FE52100A58FC8 /* Result */,
+				98B10A02281FE54C00A58FC8 /* Helpers */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9887D98E2833CC3700CF7E9F /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		98B1094D28118E2500A58FC8 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +193,7 @@
 		98B109FD281FE4E800A58FC8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				98B10A03281FE55B00A58FC8 /* Launch */,
 				98B1095928118E2500A58FC8 /* AppDelegate.swift */,
 				98B1095B28118E2500A58FC8 /* SceneDelegate.swift */,
 				98B109E328190E0500A58FC8 /* iOSViewControllerFactory.swift */,
@@ -188,10 +206,8 @@
 		98B109FE281FE4FE00A58FC8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				98B10A03281FE55B00A58FC8 /* Launch */,
-				98B109FF281FE51600A58FC8 /* Question */,
-				98B10A00281FE52100A58FC8 /* Result */,
-				98B10A02281FE54C00A58FC8 /* Helpers */,
+				9887D98E2833CC3700CF7E9F /* SwiftUI */,
+				9887D98D2833CC2900CF7E9F /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
