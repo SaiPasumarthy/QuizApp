@@ -11,6 +11,7 @@
 		9887D94D2825419E00CF7E9F /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D94C2825419E00CF7E9F /* ScoreTest.swift */; };
 		9887D950282541D600CF7E9F /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D94F282541D600CF7E9F /* BasicScore.swift */; };
 		9887D9902833CC7800CF7E9F /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D98F2833CC7800CF7E9F /* SingleAnswerQuestion.swift */; };
+		9887D9922834AEB600CF7E9F /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D9912834AEB600CF7E9F /* QuestionHeader.swift */; };
 		98B1095A28118E2500A58FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1095928118E2500A58FC8 /* AppDelegate.swift */; };
 		98B1095C28118E2500A58FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1095B28118E2500A58FC8 /* SceneDelegate.swift */; };
 		98B1096328118E2A00A58FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1096228118E2A00A58FC8 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		9887D94C2825419E00CF7E9F /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		9887D94F282541D600CF7E9F /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 		9887D98F2833CC7800CF7E9F /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
+		9887D9912834AEB600CF7E9F /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
 		98B1095628118E2500A58FC8 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1095928118E2500A58FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B1095B28118E2500A58FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9887D98F2833CC7800CF7E9F /* SingleAnswerQuestion.swift */,
+				9887D9912834AEB600CF7E9F /* QuestionHeader.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9887D9922834AEB600CF7E9F /* QuestionHeader.swift in Sources */,
 				98B1095A28118E2500A58FC8 /* AppDelegate.swift in Sources */,
 				9887D950282541D600CF7E9F /* BasicScore.swift in Sources */,
 				98B1099E28166AC000A58FC8 /* UITableViewExtenstions.swift in Sources */,
