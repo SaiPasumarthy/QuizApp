@@ -17,19 +17,9 @@ struct SingleAnswerQuestion: View {
         VStack(alignment: .leading, spacing: 0.0) {
             QuestionHeader(title: title, question: question)
             ForEach(options, id: \.self) { option in
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    HStack {
-                        Circle()
-                            .stroke(Color.secondary, lineWidth: 2.5)
-                            .frame(width: 40.0, height: 40.0)
-                        Text(option)
-                            .font(.title)
-                            .foregroundColor(Color.secondary)
-                        Spacer()
-                    }.padding()
-                        
-                        
-                })
+                SingleTextSelectionCell(text: option) {
+                    selection(option)
+                }
             }
             Spacer()
         }
@@ -38,11 +28,25 @@ struct SingleAnswerQuestion: View {
 
 struct SingleAnswerQuestion_Previews: PreviewProvider {
     static var previews: some View {
-        SingleAnswerQuestion(title: "1 of 2", question: "What is your favourite sport", options: ["Golf","Cricket","Football","Hockey"], selection: { _ in})
-        
-        SingleAnswerQuestion(title: "1 of 2", question: "What is your favourite sport", options: ["Golf","Cricket","Football","Hockey"], selection: { _ in})
-            .preferredColorScheme(.dark)
-            .environment(\.sizeCategory, .extraExtraExtraLarge)
+        Group {
+            SingleAnswerQuestionTestView()
+            SingleAnswerQuestionTestView()
+                .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .extraExtraExtraLarge)
+        }
+    }
+    
+    struct SingleAnswerQuestionTestView: View {
+        @State var selection: String = "none"
+        var body: some View {
             
+            VStack {
+                SingleAnswerQuestion(title: "1 of 2", question: "What is your favourite sport", options: ["Golf","Cricket","Football","Hockey"], selection: { selection = $0 })
+                
+                Text(selection)
+            }
+        }
     }
 }
+
+
