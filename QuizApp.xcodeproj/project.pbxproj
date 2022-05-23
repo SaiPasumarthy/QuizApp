@@ -13,6 +13,8 @@
 		9887D9902833CC7800CF7E9F /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D98F2833CC7800CF7E9F /* SingleAnswerQuestion.swift */; };
 		9887D9922834AEB600CF7E9F /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D9912834AEB600CF7E9F /* QuestionHeader.swift */; };
 		9887D9942834B1ED00CF7E9F /* SingleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D9932834B1ED00CF7E9F /* SingleTextSelectionCell.swift */; };
+		9887D99628376FF700CF7E9F /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D99528376FF700CF7E9F /* iOSSwiftUIViewControllerFactoryTest.swift */; };
+		9887D9982837703E00CF7E9F /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9887D9972837703E00CF7E9F /* iOSSwiftUIViewControllerFactory.swift */; };
 		98B1095A28118E2500A58FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1095928118E2500A58FC8 /* AppDelegate.swift */; };
 		98B1095C28118E2500A58FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1095B28118E2500A58FC8 /* SceneDelegate.swift */; };
 		98B1096328118E2A00A58FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1096228118E2A00A58FC8 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		9887D98F2833CC7800CF7E9F /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 		9887D9912834AEB600CF7E9F /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
 		9887D9932834B1ED00CF7E9F /* SingleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextSelectionCell.swift; sourceTree = "<group>"; };
+		9887D99528376FF700CF7E9F /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
+		9887D9972837703E00CF7E9F /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		98B1095628118E2500A58FC8 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1095928118E2500A58FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B1095B28118E2500A58FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				98B1095928118E2500A58FC8 /* AppDelegate.swift */,
 				98B1095B28118E2500A58FC8 /* SceneDelegate.swift */,
 				98B109E328190E0500A58FC8 /* iOSUIKitViewControllerFactory.swift */,
+				9887D9972837703E00CF7E9F /* iOSSwiftUIViewControllerFactory.swift */,
 				98B1096228118E2A00A58FC8 /* Assets.xcassets */,
 				98B1096728118E2A00A58FC8 /* Info.plist */,
 			);
@@ -306,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				98B109E128190D9F00A58FC8 /* iOSUIKitViewControllerFactoryTest.swift */,
+				9887D99528376FF700CF7E9F /* iOSSwiftUIViewControllerFactoryTest.swift */,
 				98B1097228118E2A00A58FC8 /* Info.plist */,
 			);
 			path = Main;
@@ -499,6 +505,7 @@
 				98B1098A281190EB00A58FC8 /* QuestionViewController.swift in Sources */,
 				9887D9902833CC7800CF7E9F /* SingleAnswerQuestion.swift in Sources */,
 				98B109942813D0EB00A58FC8 /* ResultViewController.swift in Sources */,
+				9887D9982837703E00CF7E9F /* iOSSwiftUIViewControllerFactory.swift in Sources */,
 				98B109E028190D5B00A58FC8 /* ViewControllerFactory.swift in Sources */,
 				9887D9942834B1ED00CF7E9F /* SingleTextSelectionCell.swift in Sources */,
 			);
@@ -512,6 +519,7 @@
 				98B109D62817CE8000A58FC8 /* NavigationControllerRouterTest.swift in Sources */,
 				98B1098C281191D700A58FC8 /* QuestionViewControllerTest.swift in Sources */,
 				9887D94D2825419E00CF7E9F /* ScoreTest.swift in Sources */,
+				9887D99628376FF700CF7E9F /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */,
 				98B109EE281A652700A58FC8 /* QuestionPresenterTest.swift in Sources */,
 				98B109982814054100A58FC8 /* TableViewHelpers.swift in Sources */,
 				98B109922813D08600A58FC8 /* ResultViewControllerTest.swift in Sources */,
